@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Game</title>
+    <link rel="shortcut icon" href="./src/img/icon.png">
+    <link rel="stylesheet" href="./src/css/style.css">
+</head>
+<body>
+
+    <h1 class="title extra-bold">Random Game</h1>
+
+    <div class="container">
+        <div class="container-images">
+            <img class="img-one" src="./src/img/question.png" alt="question">
+            <img class="img-two" src="./src/img/question.png" alt="question">
+            <img class="img-three" src="./src/img/question.png" alt="question">
+        </div>
+        <div class="container-buttons">
+            <button class="button-play bold" id="button-play" onclick="play()">Play</button>
+            <button class="button-reset bold" id="button-reset" onclick="window.location.reload()" disabled>Reset</button>
+        </div>
+    </div>
+
+    <h3>Attempts <span class="counter">0</span></h3>
+
+    <h1 class="text-winner display-none extra-bold">🎉 ¡ Winner ! 🥳</h1>
+
+    <script src="https://unpkg.com/canvas-confetti@1.4.0/dist/confetti.browser.js"></script>
+    <script src="./src/js/app.js"></script>
+
+</body>
+</html>
