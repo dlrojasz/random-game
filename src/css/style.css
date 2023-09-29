@@ -79,24 +79,11 @@ body h3 {
     border: none;
 }
 
-.button-play-disabled {
-    background-color: var(--secondary);
-    color: var(--primary);
-    border: 1px solid var(--primary);
-    cursor: none;
-}
-
 .button-reset {
     background-color: var(--secondary);
     color: var(--primary);
     border: 1px solid var(--primary);
     cursor: none;
-}
-
-.button-reset-enabled {
-    background-color: var(--primary);
-    color: var(--secondary);
-    border: none;
 }
 
 .text-winner {

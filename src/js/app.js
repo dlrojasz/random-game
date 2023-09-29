@@ -1,26 +1,42 @@
-const images = new Array();
-images[0] = "./src/img/apple.png";
-images[1] = "./src/img/cherry.png";
-images[2] = "./src/img/king.png";
-images[3] = "./src/img/orange.png";
-
 let counter = 0;
+
+const images = [
+  "./src/img/apple.png",
+  "./src/img/cherry.png",
+  "./src/img/king.png",
+  "./src/img/orange.png"
+];
+
+const numberOfImages = images.length;
+
+const showAttempts = document.querySelector(".counter");
+const imgOne = document.querySelector(".img-one");
+const imgTwo = document.querySelector(".img-two");
+const imgThree = document.querySelector(".img-three");
+const btnPlay = document.querySelector('.button-play');
+const btnReset = document.querySelector('.button-reset');
+const showTextWinner = document.querySelector('.text-winner');
 
 function play() {
   counter++;
-  document.querySelector(".counter").innerHTML = counter;
-  const randomNumberOne = Math.floor(Math.random() * 4);
-  const randomNumberTwo = Math.floor(Math.random() * 4);
-  const randomNumberThree = Math.floor(Math.random() * 4);
-  document.querySelector(".img-one").src = images[randomNumberOne];
-  document.querySelector(".img-two").src = images[randomNumberTwo];
-  document.querySelector(".img-three").src = images[randomNumberThree];
+
+  showAttempts.innerHTML = counter;
+
+  const randomNumberOne = Math.floor(Math.random() * numberOfImages);
+  const randomNumberTwo = Math.floor(Math.random() * numberOfImages);
+  const randomNumberThree = Math.floor(Math.random() * numberOfImages);
+
+  imgOne.src = images[randomNumberOne];
+  imgTwo.src = images[randomNumberTwo];
+  imgThree.src = images[randomNumberThree];
+
   if (randomNumberOne === randomNumberTwo && randomNumberOne === randomNumberThree) {
-    document.querySelector('.button-play').disabled = true;
-    document.querySelector('.button-reset').disabled = false;
-    document.querySelector('#button-play').classList.replace("button-play" ,"button-play-disabled");
-    document.querySelector('#button-reset').classList.replace("button-reset", "button-reset-enabled");
-    document.querySelector('.text-winner').classList.remove("display-none");
+    btnPlay.classList.add("display-none");
+    btnReset.classList.remove("display-none");
+    showTextWinner.classList.remove("display-none");
     confetti();
   }
 }
+
+btnPlay.addEventListener("click", () => play());
+btnReset.addEventListener("click", () => window.location.reload());
